@@ -1,4 +1,6 @@
 import jwt from "jsonwebtoken";
+import Blog from "../models/Blog.js";
+import Comment from "../models/Comment.js";
 
 export const login = async (req, res) => {
   try {
@@ -19,3 +21,21 @@ export const login = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };  
+
+export const getAllBlogsAdmin = async (req,res) => {
+  try {
+    const blogs = await Blog.find({}).sort({createdAt:-1});
+    res.status(200).json({success:true,blogs})
+  } catch (error) {
+    res.status(400).json({success:false,message:error.message})
+  }
+} 
+
+export const getAllComments = async (req,res) => {
+  try {
+    const comments = await Comment.find({}).populate('blog');
+    res.status(200).json({success:true,comments})
+  } catch (error) {
+    res.status(400).json({success:false,message:error.message})
+  }
+}
