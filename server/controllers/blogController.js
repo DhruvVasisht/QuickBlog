@@ -42,7 +42,7 @@ export const addBlog = async (req,res) => {
     }
 }
 
-export const getALlBlogs = async (req,res) => {
+export const getAllBlogs = async (req,res) => {
     try {
         const blogs = await Blog.find({isPublished:true});
         res.status(200).json({success:true,blogs})
@@ -70,6 +70,7 @@ export const deleteBlogById = async (req,res) => {
     try {
         const {id} = req.body;
         await Blog.findByIdAndDelete({_id:id});
+        await Comment.deleteMany({blog:id});
         res.status(200).json({success:true,message:"Blog deleted successfully"})
     } 
     catch (error) {
