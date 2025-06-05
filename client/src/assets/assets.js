@@ -246,14 +246,14 @@ export const dashboard_data = {
 export const footer_data = [
       {
           title: "Quick Links",
-          links: ["Home", "Best Sellers", "Offers & Deals", "Contact Us", "FAQs"]
+          links: ["Home", "Blogs", "About Us", "Contact Us", "FAQs"]
       },
       {
           title: "Need Help?",
-          links: ["Delivery Information", "Return & Refund Policy", "Payment Methods", "Track your Order", "Contact Us"]
+          links: ["About Us", "Privacy Policy", "Terms & Conditions", "Contact Us"]
       },
       {
           title: "Follow Us",
-          links: ["Instagram", "Twitter", "Facebook", "YouTube"]
+          links: ["Instagram", "Twitter", "Facebook", "YouTube", "LinkedIn"]
       }
   ];
