@@ -1,5 +1,6 @@
 import { useNavigate, Outlet } from 'react-router-dom'
 import { assets } from '../../assets/assets';
+import Sidebar from '../../components/admin/Sidebar';
 
 
 const Layout = () => {
@@ -14,7 +15,7 @@ const Layout = () => {
         <button onClick={logout} className="text-sm px-8 py-2 bg-primary text-white rounded-full cursor-pointer">Logout</button>
       </div>
       <div className='flex h-[calc(100vh-70px)]'>
-        <div>SideBar</div>
+        <Sidebar />
         <Outlet />
       </div>
     </>
